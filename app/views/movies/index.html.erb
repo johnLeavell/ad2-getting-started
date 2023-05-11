@@ -14,10 +14,10 @@
       Add a new movie
     </h2>
 
-    <form action="/movies/<%= @the_movie.id %>" method="post">
+    <form action="/movies" method="post">
 
-      <input type="text" name="authenticity_token" value="<%= form_authenticity_token %>">
-      <input type="hidden" name="_method" value="patch">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
 
     <div>
         <label for="title_box">
