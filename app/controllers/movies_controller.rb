@@ -25,10 +25,11 @@ class MoviesController < ApplicationController
 
     if @the_movie.valid?
       @the_movie.save
+
       redirect_to("/movies", { :notice => "Movie created successfully." })
     else
       
-      render template: "movies/with_errors"
+      render template: "movies/new"
       #redirect_to("/movies/new", { :alert => @the_movie.errors.full_messages.to_sentence })
     end
   end
@@ -59,6 +60,8 @@ class MoviesController < ApplicationController
   end
 
   def new
+    @the_movie = Movie.new
+    
     render template: "movies/new.html.erb"
   end
 
